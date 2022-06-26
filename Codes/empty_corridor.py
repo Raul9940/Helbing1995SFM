@@ -29,7 +29,7 @@ def initial_conditions(n, width, length):
 
 
 
-def position_evolver(a, old, i, delta_t, tau, width, max_v_coef, pos_int_wall, widthwall, sigma, v0, r, u0, c, phi):
+def position_evolver(a, old, i, delta_t, tau, width, max_v_coef, sigma, v0, r, u0, c, phi):
     n=np.ma.size(a,1)
     new=np.zeros(4)
     rabx=np.zeros(n)
@@ -137,8 +137,6 @@ tau=0.5
 r=0.2
 u0=10.0
 max_v_coef=1.3
-pos_int_wall=length/2.0
-widthwall=2.0
 sigma=0.3
 v0=2.1
 c=0.5
@@ -152,7 +150,7 @@ new=np.zeros((4, n))
 
 for l in range(t_step):
     for i in range(n):
-        new[:,i]=position_evolver(init, old, i, t_delta, tau, width, max_v_coef, pos_int_wall, widthwall, sigma, v0, r, u0, c, phi)
+        new[:,i]=position_evolver(init, old, i, t_delta, tau, width, max_v_coef, sigma, v0, r, u0, c, phi)
         
     if ((l*t_delta)%1.0)==0.0:
         azules=[]
