@@ -9,7 +9,7 @@ The following simulations are available:
 
 -[Two reduced apertures in the middle of the corridor](<Codes/middle_aperture_with_central_wall.py>): Two reduced apertures are located in the middle of the corridor. Each group of pedestrians is made to cross through a different one. They obey with a given probability.
 
-Simulations are run in an Euler scheme and no periodic boundary conditions are used.
+Simulations are run in an Euler method scheme and no periodic boundary conditions are used.
 
 References:
 
