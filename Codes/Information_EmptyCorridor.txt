@@ -1,1 +1,39 @@
+Code that simulates a case in which pedestrians move along an empty corridor. Code is based in two functions:
+-initial_conditions: Return the initial conditions for the pedestrians
+--Input Variables:
+---n: Number of pedestrians.
+---width: width of the corridor.
+---length: length of the corridor.
+--Output variables:
+---a: (3, n) matrix with properties for each pedestrian:
+----Row 0: Direction in which the pedestrian moves. 1 from left to right, -1 from right to left.
+----Row 1: Initial position in the y axis.
+----Row 2: Desired velocity.
+---old: (4, n) matrix containing initial conditions for each pedestrian.
+----Row 0: Initial x position (left end of the corridor pedestrian it moves from left to right, and right end if pedestrian moves from right to left).
+----Row 1: Initial y position.
+----Row 2: Intial velocity in the x axis. Module equal to desired velocity and direction the same as their desired direction of motion.
+----Row 3: Initial velocity in the y axis. Chosen to be 0.
+
+-position_evolver:
+--Input variables:
+---a: Properties of the pedestrians (ouput of initial_conditions).
+---old: Initial conditions of the pedestrians (ouput of initial_conditions).
+---i: Pedestrian whose position we want to evolve.
+---delta_t: Timestep.
+---width: width of the corridor
+---tau: Parameter \tau associated to the goal force [1].
+---max_v_coef: Parameter that multiplied by the desired velocity tells the maximum module of the velocity a pedestrian can take. If at any timestep the module of the velocity is larger, the module of the velocity is rescaled to the mentioned value, keeping its direction
+---sigma: Parameter \sigma associated to the pedestrian-pedestrian repulsion force [1].
+---v0: Parameter V_{\alpha\beta} (only that we have assumed it equal for all pairs of pedestrians) associated to the pedestrian-pedestrian repulsion force [1].
+---r: Parameter r associated to the pedestrian-wall repulsion force [1].
+---u0: Parameter U_0 associated to the pedestrian-wall repulsion force [1].
+---c: Parameter c associated to the scaling of forces due to vision range [1].
+---phi: Parameter \varphi associated to the vision range [1].
+--Output variables:
+---new: Updated positions of the pedestrians.
+
+In the code the functions are implemented in such way that at certain timesteps the position of the pedestrians are plotted. Blue dots represent pedestrians moving from left to rigth, while red from right to left. Dot size is proportional to the velocity of them. Black lines represent walls.
+
+
 
