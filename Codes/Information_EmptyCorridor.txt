@@ -33,7 +33,7 @@ Code that simulates a case in which pedestrians move along an empty corridor. Co
 --Output variables:
 ---new: Updated positions of the pedestrians.
 
-In the code the functions are implemented in such way that at certain timesteps the position of the pedestrians are plotted. Blue dots represent pedestrians moving from left to rigth, while red from right to left. Dot size is proportional to the velocity of them. Black lines represent walls.
+In the code the functions are implemented in such way that at certain timesteps the position of the pedestrians are plotted. Blue dots represent pedestrians moving from left to rigth, while red from right to left. Dot size is proportional to the velocity of them. Black lines represent walls. Simulations run for t_max.
 
 
 
